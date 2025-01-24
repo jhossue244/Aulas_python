@@ -1,6 +1,26 @@
 print("=" * 20)
-print("       NUBANK")
+print('{:-^20}'.format("BANCO BOLIS"))
 print("=" * 20)
-saque =0
+valor = int(input("Qual valor você quer sacar? R$"))
+total = valor
+ced = 100
+totced = 0
 while True:
-    saque = float(input("Quantos quer sacar? R$"))
+    if total >= ced:
+        total -= ced
+        totced += 1
+    else:
+        if totced > 0:
+            print(f"Total de {totced} cédulas de R${ced}")
+        if ced == 100:
+            ced = 50
+        elif ced == 50:
+            ced = 20
+        elif ced == 20:
+            ced = 10
+        elif ced == 10:
+            ced = 1
+        totced = 0
+        if total == 0:
+             break
+print("Volte sempre ao BANCO BOLIS! Bom Dia!")
